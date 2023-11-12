@@ -63,9 +63,9 @@ const registerUser = asyncHandler(async (req,res)=>{
 });
 
 //@desc Logout user/clear cookie
-//@route POST/api/users/login
+//@route POST/api/users/logout
 //@access Private
-const logOutUser = asyncHandler(async (req,res)=>{
+const logoutUser = asyncHandler(async (req,res)=>{
     res.cookie('jwt','',{
         httpOnly:true,
         expires: new Date(0)
@@ -146,7 +146,7 @@ const deleteUser = asyncHandler(async (req,res)=>{
 
 //@desc update Users
 //@route PUT/api/users/:id
-//@access Private/admon
+//@access Private/admin
 const updateUser = asyncHandler(async (req,res)=>{
     res.send('update user');
 });
@@ -154,7 +154,7 @@ const updateUser = asyncHandler(async (req,res)=>{
 export {
     authUser,
     registerUser,
-    logOutUser,
+    logoutUser,
     getUserProfile,
     updateUserProfile,
     getUsers,

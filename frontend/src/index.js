@@ -10,7 +10,8 @@ import reportWebVitals from './reportWebVitals';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
-
+import LoginScreen from './screens/LoginScreen.jsx';
+import RegisterScreen from './screens/RegisterScreen.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,9 @@ const router = createBrowserRouter(
       <Route path='/' index={true} element={<HomeScreen />} />
       <Route path='/product/:id' index={true} element={<ProductScreen />} />
       <Route path='/cart' index={true} element={<CartScreen />} />
+      <Route path='/login' index={true} element={<LoginScreen />} />
+      <Route path='/register' index={true} element={<RegisterScreen />} />
+
     </Route>
   )
 );
