@@ -3,12 +3,24 @@ import Product from '../components/Product';
 import { useGetProductsQuery } from '../slices/productsApiSlice';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
-
+import { Link, useParams } from 'react-router-dom';
+import ProductCarousel from '../components/ProductCarousel';
 const HomeScreen = () => {
-  const {data:products,isLoading,error} = useGetProductsQuery();
+  const {keyword}=useParams();
+
+  const {data:products,isLoading,error} = useGetProductsQuery({keyword});
 
   return (
     <>
+      {!keyword ? <ProductCarousel />:(
+        <Link to='/' className='btn btn-light mb-4'>
+          Go Back
+        </Link>
+      )
+
+      }
+
+
       {isLoading ? (
         <Loader />
       ) : error ? (

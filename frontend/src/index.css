@@ -34,3 +34,22 @@ a{
   text-decoration: none;
   color:inherit;
 }
+
+.d-flex{
+  display: flex ;
+  flex-direction: row ;
+  justify-content: space-evenly ;
+  align-items: center ;
+}
+.carousel-caption{
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  width: 100%;
+}
+.brand-name{
+  position: relative;
+}

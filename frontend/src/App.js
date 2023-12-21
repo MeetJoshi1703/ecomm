@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className='py-3'>
+      <main className='py-3'  style={{ marginTop: '80px'}} >
         <Container>
           <Outlet />
         </Container>
