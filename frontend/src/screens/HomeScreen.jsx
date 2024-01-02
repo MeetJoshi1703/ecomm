@@ -54,6 +54,7 @@ const HomeScreen = () => {
           <FeaturedProducts />
         </div>
         <div>
+          
           <h1>Latest Products</h1>          
           <Row>
             {limitedProducts.map((product)=>(

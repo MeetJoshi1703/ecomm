@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react';
 import {Link,useLocation,useNavigate} from 'react-router-dom';
-import {Form,Button,Row,Col,} from 'react-bootstrap';
+import {Form,Button,Row,Col,Image} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../components/FormContainer';
 import Loader from '../components/Loader';
@@ -11,12 +11,12 @@ import styled from 'styled-components';
 
 const Section = styled.section`
     .col-md-6{
+        width: 500px;
         display: flex;
         flex-direction: column;
         padding: 3rem;
         gap: 2rem;
         border: 1px solid black;
-    
     }
     .col-md-6 > h1{
         width:fit-content;
