@@ -152,7 +152,7 @@ const ProductScreen = () => {
                         <Form onSubmit={submitHandler}>
                           <Form.Group controlId="rating" className="my-2">
                             <Form.Label>Rating</Form.Label>
-                            <Form.Control as='select' value='rating' onChange={(e)=>setRating(Number(e.target.value))}> 
+                            <Form.Control as='select' value={rating} onChange={(e)=>setRating(Number(e.target.value))}> 
                               <option value=''>Select...</option>
                               <option value='1'>1-poor</option>
                               <option value='2'>2 - fair</option>
