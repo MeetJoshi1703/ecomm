@@ -7,6 +7,38 @@ import Loader from '../components/Loader';
 import { useRegisterMutation } from '../slices/usersApiSlice';
 import {setCredentials} from '../slices/authSlice';
 import {toast} from 'react-toastify';
+import styled from 'styled-components';
+
+const Section = styled.section`
+    .col-md-6{
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+        gap: 2rem;
+        border: 1px solid black;
+    
+    }
+    .col-md-6 > h1{
+        width:fit-content;
+        padding-bottom: 1rem;
+        border-bottom:1px solid black ;
+        margin-inline: auto;
+    }
+    .col-md-6 > form{
+        
+    }
+    .col-md-6 > form > label{
+        font-weight: bold;
+    }
+
+    .col-md-6 .form-control{
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+        border-radius: 0;
+        
+    }
+`
 
 const RegisterScreen = () => {
     const [name,setName] = useState('')
@@ -48,6 +80,7 @@ const RegisterScreen = () => {
     };
 
   return (
+    <Section>
     <FormContainer>
         <h1>Sign Up</h1>
         <Form onSubmit={submitHandler}>
@@ -108,6 +141,7 @@ const RegisterScreen = () => {
             </Col>
          </Row>
     </FormContainer>
+    </Section>
   )
 }
 

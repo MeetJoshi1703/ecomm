@@ -28,9 +28,10 @@ const SearchBox = () => {
             onChange={(e)=>setKeyword(e.target.value)}
             value={keyword}
             placeholder="Search Products..."
+            style={{width:'100%'}}
             className="mr-sm-2 ml-sm-5">
         </Form.Control>
-        <Button type="submit" variant="outline-success" className="p-2 mx-2 search-button">
+        <Button type="submit" variant="outline-info" size="md" className="p-2 mx-2 search-button"  style={{ width: '100px', padding: '10px' }}>
             Search
         </Button>
     </Form>

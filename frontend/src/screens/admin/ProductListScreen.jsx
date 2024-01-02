@@ -1,14 +1,16 @@
 import {LinkContainer} from 'react-router-bootstrap';
 import {Table,Button,Row,Col} from 'react-bootstrap';
-import {FaTimes,FaEdit,FaTrash} from 'react-icons/fa';
+import {FaEdit,FaTrash} from 'react-icons/fa';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useGetProductsQuery,useCreateProductMutation,useDeleteProductMutation } from '../../slices/productsApiSlice';
 
 const ProductListScreen = () => {
+    const {keyword}=useParams();
 
-    const {data:products,isLoading,error,refetch}= useGetProductsQuery();
+    const {data:products,isLoading,error,refetch}= useGetProductsQuery({keyword});
     
     const [createProduct,{isLoading:loadingCreate}]= useCreateProductMutation();
 
@@ -51,6 +53,7 @@ const ProductListScreen = () => {
         </Row>
         {loadingCreate && <Loader />}
         {loadingDelete && <Loader />}
+
         {isLoading?<Loader />:error?<Message variant='danger'>
             {error}
         </Message>:(

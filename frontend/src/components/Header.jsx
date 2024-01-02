@@ -4,9 +4,53 @@ import { FaShoppingCart,FaUser } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLogoutMutation } from '../slices/usersApiSlice';
 import { logout } from '../slices/authSlice';
-import logo from '../assets/logo.png';
+import DUMBshop3 from '../assets/DUMBshop3.png'
 import {LinkContainer} from 'react-router-bootstrap';
 import SearchBox from './SearchBox';
+import styled from 'styled-components';
+
+
+const Section = styled.section`
+    nav .brand-name{
+    width: 20%;
+    display: block;
+    margin-right: 0;
+}
+@media screen and (max-width: 769px) {
+    .header-img{
+        display: none;
+    }
+    .navbar > .container > form{
+        width: 80%;
+    }
+
+    .navbar-collapse > .brand-name{
+        display: none;
+    }
+}
+
+
+.navbar-expand-md .navbar-nav{
+    
+}
+
+.navbar-expand-md .navbar-collapse{
+ 
+}
+
+.navbar > .container > form{
+  min-width: 50%;
+}
+.navbar-expand-md .navbar-collapse > form{
+  
+}
+.brand-name{
+    position: relative;
+}
+
+`
+
+
 
 const Header = () => {
 
@@ -29,19 +73,24 @@ const Header = () => {
     }
     
   return (
+    <Section>
     <header style={{ position: 'fixed', width: '100%', zIndex: 100,top:'0'}}>
         <Navbar bg='dark' variant='dark' expand='md' collapseOnSelect >
             <Container>
-                <LinkContainer to='/'>
-                    <Navbar.Brand className='brand-name'>
-                        <img src={logo} alt='proshop' />
-                        Proshop
-                    </Navbar.Brand>
-                </LinkContainer>
-                <Navbar.Toggle aria-controls='basic-bavbar-nav' />
+                <img src={DUMBshop3} alt='DUMBstore' style={{width:'4%'}} className='header-img' />
                 <Navbar.Collapse id='basic-navbar-nav'>
-                    <Nav className='ms-auto'>
-                    <SearchBox />
+                    <LinkContainer to='/'>    
+                        <Navbar.Brand className='brand-name'>    
+                            DUMBstore
+                        </Navbar.Brand>
+                    </LinkContainer>
+                </Navbar.Collapse>
+
+                <Navbar.Toggle aria-controls='basic-navbar-nav' />
+
+                <SearchBox className="searchbox" />
+                <Navbar.Collapse id='basic-navbar-nav'>
+                    <Nav className='ms-auto'>    
                     <LinkContainer to='/cart'><Nav.Link><FaShoppingCart />
                     Cart
                     {cartItems.length > 0 && (
@@ -80,6 +129,7 @@ const Header = () => {
             </Container>
         </Navbar>
     </header>
+    </Section>
   )
 }
 
